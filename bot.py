@@ -14,6 +14,7 @@ client = discord.Client()
 #implementation of the bot printing the server it is running on and the members that are currently in it
 @client.event
 async def on_ready():
+    await client.change_presence(activity=discord.Game(name='Ora Ora Ora Ora',extra=None))
     guild = discord.utils.get(client.guilds, name=GUILD)
     print(
         f'{client.user} is connected to the following guild:\n'
@@ -32,7 +33,6 @@ async def on_member_join(member):
         f'Hi {member.name}, welcome to the depths of Mordor!'
     )
     print(f'Sent a welcome message {member.name} for joining the server.')
-
 
 
 
